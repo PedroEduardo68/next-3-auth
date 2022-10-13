@@ -1,4 +1,4 @@
-export const HttpClient = async (fetchUrl, fetchOptions) =>{
+const HttpClient = async (fetchUrl, fetchOptions) =>{
     return fetch(fetchUrl,{
         ...fetchOptions,
         method: 'POST',
@@ -15,3 +15,5 @@ export const HttpClient = async (fetchUrl, fetchOptions) =>{
         }
     });
 }
+
+export default HttpClient;
