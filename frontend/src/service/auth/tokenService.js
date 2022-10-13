@@ -27,5 +27,6 @@ export const tokenService = {
     delete(){
         globalThis?.localStorage?.removeItem(ACESS_TOKEN_KEY)
         globalThis?.sessionStorage?.removeItem(ACESS_TOKEN_KEY)
+        nookies.destroy(ctx,ACESS_TOKEN_KEY)
     }
 }
