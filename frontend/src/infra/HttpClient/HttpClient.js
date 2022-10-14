@@ -1,19 +1,21 @@
-const HttpClient = async (fetchUrl, fetchOptions) =>{
-    return fetch(fetchUrl,{
-        ...fetchOptions,
-        method: 'POST',
-        headers:{
-            "Content-Type": "application/json",
-            ...fetchOptions.headers,
-        }, 
-        body:fetchOptions.body ? JSON.stringify(fetchOptions.body) : null,
-    })
-    .then(async(resp)=>{
+// Arquitetura Hexagonal
+// Ports & Adapters
+export async function HttpClient(fetchUrl, fetchOptions) {
+    const options = {
+      ...fetchOptions,
+      headers: {
+        'Content-Type': 'application/json',
+        ...fetchOptions.headers,
+      },
+      body: fetchOptions.body ? JSON.stringify(fetchOptions.body) : null,
+    };
+    return fetch(fetchUrl, options)
+      .then(async (respostaDoServidor) => {
         return {
-            ok: resp.ok,
-            body: await resp.json(),
+          ok: respostaDoServidor.ok,
+          status: respostaDoServidor.status,
+          statusText: respostaDoServidor.statusText,
+          body: await respostaDoServidor.json(),
         }
-    });
-}
-
-export default HttpClient;
+      });
+  }
