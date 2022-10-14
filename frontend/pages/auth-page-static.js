@@ -1,6 +1,7 @@
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import { authService } from "../src/service/auth/authService"
+import { withSessionHOC } from "../src/service/auth/session"
 
 const useSession = () =>{
     const [ session, setSession] = useState(null)
@@ -30,27 +31,26 @@ const useSession = () =>{
         loading,
     }
 }
+// const withSessionHOC = (Component) =>{
+//     return function Wrapper(props){
+//         const router = useRouter()
 
-const withSessionHOC = (Component) =>{
-    return function Wrapper(props){
-        const router = useRouter()
-
-        const session = useSession()
+//         const session = useSession()
     
-        if(!session.loading && session.error) {
-            router.push('/?error=401')
-        }
+//         if(!session.loading && session.error) {
+//             router.push('/?error=401')
+//         }
     
-        const modifiedProps = {
-            ...props,
-            session: session.data.session,
-        }
+//         const modifiedProps = {
+//             ...props,
+//             session: session.data.session,
+//         }
 
-        return (
-            <Component {...modifiedProps} />
-        )
-    }
-}
+//         return (
+//             <Component {...modifiedProps} />
+//         )
+//     }
+// }
 
 
 
