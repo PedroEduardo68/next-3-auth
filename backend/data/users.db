@@ -2,3 +2,5 @@
 {"username":"peas","password":"safepassword","name":"Paulo Silveira","email":"paulo@alura.com.br","_id":"pchQDUBs1jJv8br0"}
 {"$$indexCreated":{"fieldName":"username","unique":true,"sparse":false}}
 {"username":"pcamera","name":"Pedro Camera","email":"pedro@pedro.com.br","password":"pedro","refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjYxNDQyMjQsImV4cCI6MTY2Njc0OTAyNCwic3ViIjoiU05ZOGUyVDgwaUFpNjg3cyJ9.FDcgUCL-mQAXkmRJ9Oz4MwKYjCRiMEjNmIoXSdS1f0o","_id":"SNY8e2T80iAi687s"}
+{"username":"pcamera","name":"Pedro Camera","email":"pedro@pedro.com.br","password":"pedro","refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjYxNDQ1NDgsImV4cCI6MTY2Njc0OTM0OCwic3ViIjoiU05ZOGUyVDgwaUFpNjg3cyJ9.rl51xBbaMBu26s8H3w1J4ke3rzB6X531hYz5qjbNzE4","_id":"SNY8e2T80iAi687s"}
+{"username":"pcamera","name":"Pedro Camera","email":"pedro@pedro.com.br","password":"pedro","refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjYxNDQ2NDgsImV4cCI6MTY2Njc0OTQ0OCwic3ViIjoiU05ZOGUyVDgwaUFpNjg3cyJ9.z4LwBz4iwPOlUfYRTcNfM70XUJAqU3pSfK6-e3IhYZ8","_id":"SNY8e2T80iAi687s"}

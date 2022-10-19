@@ -16,9 +16,15 @@ export const authService = {
 
       return body;
       // console.log(body)
-    }).then(({data}) => {
+    }).then(async ({data}) => {
       const {refresh_token } = data;
-      console.log(refresh_token)
+      const responseHttp = await HttpClient('/api/refresh',{
+        method: 'POST',
+        body:{
+          refresh_token
+        }
+      })
+      console.log(responseHttp)
 
     })
   },
