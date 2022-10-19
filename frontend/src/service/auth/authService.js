@@ -13,19 +13,19 @@ export const authService = {
 
       tokenService.save(body.data.access_token);
 
-
       return body;
-      // console.log(body)
-    }).then(async ({data}) => {
-      const {refresh_token } = data;
-      const responseHttp = await HttpClient('/api/refresh',{
+    })
+    .then(async ({ data }) => {
+      const { refresh_token }   = data;
+
+      const response = await HttpClient('/api/refresh', {
         method: 'POST',
-        body:{
+        body: {
           refresh_token
         }
       })
-      console.log(responseHttp)
 
+      console.log(response);
     })
   },
   async getSession(ctx = null) {

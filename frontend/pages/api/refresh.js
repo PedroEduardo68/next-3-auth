@@ -12,25 +12,32 @@ const REFRESH_TOKEN_NAME = 'REFRESH_TOKEN_NAME'
 
 const controllers = {
     async storeRefreshToken(req, res) {
+    const ctx = { req, res}
     console.log(req.body)
 
-    nookies.set(REFRESH_TOKEN_NAME, req.body.refresh_token, {
+    nookies.set(ctx, REFRESH_TOKEN_NAME, req.body.refresh_token, {
         httpOnly : true,
         sameSite: 'lax',
     })
 
 
 
-    res.json({
-        hello:"workd"
-    })
+    },
+    async displayCookies(){
+        const ctx = { req, res}
+        res.json({
+            data:{
+                cookies: nookies.get({ctx})
+            }
+        })
 
     }
 }
 
 
 const controllersBy = {
-    POST: controllers.storeRefreshToken
+    POST: controllers.storeRefreshToken,
+    GET: controllers.displayCookies
 }
 
 
