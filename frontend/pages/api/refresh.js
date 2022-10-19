@@ -11,7 +11,7 @@ const controllers = {
 
 
 
-    response.json({
+    res.json({
         hello:"workd"
     })
 
