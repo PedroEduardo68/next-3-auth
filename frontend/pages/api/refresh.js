@@ -4,10 +4,20 @@
 //         hello:"workd"
 //     })
 // }
+import nookies from 'nookies'
+
+
+
+const REFRESH_TOKEN_NAME = 'REFRESH_TOKEN_NAME'
 
 const controllers = {
     async storeRefreshToken(req, res) {
     console.log(req.body)
+
+    nookies.set(REFRESH_TOKEN_NAME, req.body.refresh_token, {
+        httpOnly : true,
+        sameSite: 'lax',
+    })
 
 
 
